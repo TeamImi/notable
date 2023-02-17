@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import { styled } from "@mui/system";
 import { ClippedText, Title } from "@thisday/components";
 import IconButton from "@mui/material/IconButton";
@@ -35,10 +35,15 @@ export const Person = memo(
     handleOpenDetails: () => void;
   }) => {
     const { addFavorite, removeFavorite, checkIsFavorite } = useFavorites();
-    const isFavourite = checkIsFavorite(notablePerson.details.pageid);
+    const [isFavorite, setIsFavorite] = useState(false);
 
     const name = notablePerson.details.titles.normalized;
     const description = notablePerson.details.description;
+
+    useEffect(() => {
+      const isFavoriteResponse = checkIsFavorite(notablePerson.details.pageid);
+      setIsFavorite(isFavoriteResponse);
+    }, [checkIsFavorite, notablePerson.details.pageid]);
 
     const handleAddFavourite = (e: any) => {
       e.stopPropagation();
@@ -53,10 +58,10 @@ export const Person = memo(
     return (
       <>
         <Item onClick={handleOpenDetails}>
-          <FavouriteButton
-            isFavourite={isFavourite}
+          <FavoriteButton
+            isFavorite={isFavorite}
             handleFavourite={
-              isFavourite ? handleRemoveFavorite : handleAddFavourite
+              isFavorite ? handleRemoveFavorite : handleAddFavourite
             }
           />
           <Title>{name}</Title>
@@ -77,18 +82,16 @@ export const StyledIcon = styled(IconButton, {
   zIndex: 2,
 }));
 
-const FavouriteButton = memo(
-  ({
-    isFavourite,
-    handleFavourite,
-  }: {
-    isFavourite: boolean;
-    handleFavourite: (e: any) => void;
-  }) => {
-    return (
-      <StyledIcon onClick={handleFavourite} isFavorite>
-        <FavoriteIcon />
-      </StyledIcon>
-    );
-  }
-);
+const FavoriteButton = ({
+  isFavorite,
+  handleFavourite,
+}: {
+  isFavorite: boolean;
+  handleFavourite: (e: any) => void;
+}) => {
+  return (
+    <StyledIcon onClick={handleFavourite} isFavorite={isFavorite}>
+      <FavoriteIcon />
+    </StyledIcon>
+  );
+};

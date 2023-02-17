@@ -6,7 +6,6 @@ This project uses this file structure:
 app
 │── atoms
 │── components
-├── models
 ├── pages
 ├── queries
 ├── services
@@ -18,5 +17,7 @@ app
 ### Commands
 
 > Run --> `yarn dev` OR `npm run dev`
+
 > Prod build --> `yarn build`
+
 > Run tests --> `yarn test`
