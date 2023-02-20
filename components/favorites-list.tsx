@@ -105,7 +105,7 @@ export const FavoritesList = ({
           <FavouriteItem
             key={`${person}-${index}`}
             person={person}
-            handleFavourite={removeFavorite.bind(null, favoriteId)}
+            handleFavourite={() => removeFavorite(favoriteId)}
           />
         );
       })}

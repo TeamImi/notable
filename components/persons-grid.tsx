@@ -53,7 +53,7 @@ const PersonsGrid = ({ notableBirthdays, gridRef }: PersonsGridProps) => {
         <Person
           key={`${person.details.pageid}-${index}`}
           notablePerson={person}
-          handleOpenDetails={handleOpen.bind(null, person)}
+          handleOpenDetails={() => handleOpen(person)}
         />
       ))}
       {isOpen && (
