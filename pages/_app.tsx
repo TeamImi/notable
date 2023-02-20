@@ -5,8 +5,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import { QueryClient, Hydrate } from "@tanstack/react-query";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { CacheProvider } from "@emotion/react";
-import { createIndexedDBPersister } from "@thisday/services/indexed-db-storage";
-import { theme, createEmotionCache } from "@thisday/theme";
+import { createIndexedDBPersister } from "@services/indexed-db-storage";
+import { theme, createEmotionCache } from "@theme/index";
 
 const queryClient = new QueryClient({
   defaultOptions: {

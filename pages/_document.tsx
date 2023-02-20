@@ -7,7 +7,7 @@ import Document, {
   DocumentInitialProps,
 } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
-import { createEmotionCache, theme, poppins } from "@thisday/theme";
+import { createEmotionCache, theme, poppins } from "@theme/index";
 import { AppType } from "next/dist/shared/lib/utils";
 import { EmotionCache } from "@emotion/cache";
 

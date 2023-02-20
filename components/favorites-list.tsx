@@ -1,7 +1,7 @@
 import { memo, useState } from "react";
 import { styled } from "@mui/system";
-import { ClippedText } from "@thisday/components";
-import { NotableRecord } from "@thisday/types";
+import { ClippedText } from "@components/index";
+import { NotableRecord } from "@types";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import FavoriteIcon from "@mui/icons-material/Favorite";

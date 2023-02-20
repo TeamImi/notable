@@ -6,16 +6,16 @@ import { Stack } from "@mui/system";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Container from "@mui/material/Container";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { QUERY_ID } from "@thisday/queries";
+import { QUERY_ID } from "@queries/index";
 import { Dayjs } from "dayjs";
-import { getBirthdaysToday } from "@thisday/services/api";
+import { getBirthdaysToday } from "@services/api";
 import {
   Calendar,
   PersonsSection,
   FavoritesSection,
   Heading,
-} from "@thisday/components";
-import { useFavorites } from "@thisday/atoms/favorites";
+} from "@components/index";
+import { useFavorites } from "@atoms/favorites";
 
 const getTodaysDateAndMonth = (date?: Date) => {
   const d = new Date();

@@ -4,7 +4,12 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
     "paths": {
-      "@thisday/*": ["*"],
+      "@components/*": ["./components/*"],
+      "@services/*": ["./services/*"],
+      "@atoms/*": ["./atoms/*"],
+      "@queries/*": ["./queries/*"],
+      "@theme/*": ["./theme/*"],
+      "@types": ["./types"],
       "test-utils": ["./utils/test-utils"]
     },
     "allowJs": true,

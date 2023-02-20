@@ -1,9 +1,9 @@
 import React from "react";
-import { FavoritesList } from "@thisday/components";
-import { useFavorites } from "@thisday/atoms/favorites";
+import { FavoritesList } from "@components/index";
+import { useFavorites } from "@atoms/favorites";
 
 export const FavoritesSection = () => {
-  const { favourites, removeFavorite, showFavorites } = useFavorites();
+  const { favourites, removeFavorite } = useFavorites();
 
   return (
     <>

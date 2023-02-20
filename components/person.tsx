@@ -1,10 +1,10 @@
 import { memo, useEffect, useState } from "react";
 import { styled } from "@mui/system";
-import { ClippedText, Title } from "@thisday/components";
+import { ClippedText, Title } from "@components/index";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { NotableRecord } from "@thisday/types";
-import { useFavorites } from "@thisday/atoms/favorites";
+import { NotableRecord } from "@types";
+import { useFavorites } from "@atoms/favorites";
 
 const Item = styled("div")(({ theme }) => ({
   display: "flex",
@@ -90,8 +90,12 @@ const FavoriteButton = ({
   handleFavourite: (e: any) => void;
 }) => {
   return (
-    <StyledIcon onClick={handleFavourite} isFavorite={isFavorite}>
-      <FavoriteIcon />
+    <StyledIcon
+      onClick={handleFavourite}
+      isFavorite={isFavorite}
+      aria-label={"Favorite"}
+    >
+      <FavoriteIcon focusable='false' aria-hidden='true' />
     </StyledIcon>
   );
 };

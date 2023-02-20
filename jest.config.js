@@ -9,7 +9,12 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   moduleNameMapper: {
-    "^@thisday/(.*)$": "<rootDir>/$1",
+    // "^@thisday/(.*)$": "<rootDir>/$1",
+    "^@components/(.*)$": "<rootDir>/components/$1",
+    "^@theme/(.*)$": "<rootDir>/theme/$1",
+    "^@atoms/(.*)$": "<rootDir>/atoms/$1",
+    "^@queries/(.*)$": "<rootDir>/queries/$1",
+    "^@services/(.*)$": "<rootDir>/services/$1",
   },
   testEnvironment: "jest-environment-jsdom",
   moduleDirectories: ["node_modules", "utils"],

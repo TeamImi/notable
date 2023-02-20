@@ -3,9 +3,9 @@ import dynamic from "next/dynamic";
 import { styled } from "@mui/system";
 import Pagination from "@mui/material/Pagination";
 import { Dayjs } from "dayjs";
-import { useBirthdays } from "@thisday/queries";
+import { useBirthdays } from "@queries/index";
 
-const DynamicGrid = dynamic(() => import("@thisday/components/persons-grid"));
+const DynamicGrid = dynamic(() => import("@components/persons-grid"));
 
 const PaginationContainer = styled("div")(({ theme }) => ({
   display: "flex",

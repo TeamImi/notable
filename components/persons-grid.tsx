@@ -2,8 +2,8 @@ import { useCallback, useState, RefObject } from "react";
 import { styled } from "@mui/system";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import { ClippedText, Title } from "@thisday/components";
-import { NotableRecord } from "@thisday/types";
+import { ClippedText, Title } from "@components/index";
+import { NotableRecord } from "@types";
 import { Person } from "./person";
 
 export const Container = styled("ul")(({ theme }) => ({

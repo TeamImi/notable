@@ -1,8 +1,7 @@
-import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Birthday } from "@thisday/types";
-import { getBirthdaysToday, BirthdaysApiResponse } from "@thisday/services/api";
-import { NotableRecord } from "@thisday/types";
+import { Birthday } from "@types";
+import { getBirthdaysToday, BirthdaysApiResponse } from "@services/api";
+import { NotableRecord } from "@types";
 
 export const QUERY_ID = "BIRTHDAYS";
 const TEN_MINUTES_IN_MILLISECONDS = 1000 * 60 * 10;

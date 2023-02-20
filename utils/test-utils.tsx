@@ -1,15 +1,8 @@
 import React, { ReactElement } from "react";
 import { render, RenderOptions } from "@testing-library/react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
-import {
-  QueryClient,
-  Hydrate,
-  QueryClientProvider,
-} from "@tanstack/react-query";
-import { createIndexedDBPersister } from "@thisday/services/indexed-db-storage";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const persister = createIndexedDBPersister();
 const theme = createTheme({});
 
 const createQueryClient = () => {
@@ -19,24 +12,13 @@ const createQueryClient = () => {
       queries: {
         retryDelay: 0,
       },
-      mutations: {
-        retryDelay: 0,
-      },
-    },
-    logger: {
-      log: () => null,
-      warn: () => null,
-      error: () => null,
     },
   });
 };
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   return (
-    <QueryClientProvider
-      client={createQueryClient()}
-      //   persistOptions={{ persister }}
-    >
+    <QueryClientProvider client={createQueryClient()}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </QueryClientProvider>
   );

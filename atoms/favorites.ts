@@ -1,6 +1,6 @@
 import { useAtom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
-import { NotableRecord } from "@thisday/types";
+import { NotableRecord } from "@types";
 
 export const favoriteAtomWithStorage = atomWithStorage<
   Record<number, NotableRecord>
